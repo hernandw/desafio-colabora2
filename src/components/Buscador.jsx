@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Buscador = ({ usuarios, setUsuarios, palabra, setPalabra }) => {
+const Buscador = ({palabra, setPalabra }) => {
   
   
 
