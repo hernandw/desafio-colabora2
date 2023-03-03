@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TableRow from "./TableRow";
 
-const Tabla = ({ usuarios }) => {
-  const [palabra, setPalabra] = useState("");
+const Tabla = ({ usuarios, palabra }) => {
+  
   let results = [];
   if (!palabra) {
     results = usuarios;
@@ -12,20 +12,12 @@ const Tabla = ({ usuarios }) => {
         user.name.toLowerCase().includes(palabra.toLowerCase()) ||
         user.email.toLowerCase().includes(palabra.toLowerCase())
     );
+    
   }
 
   return (
     <div>
-      <div className="mb-5">
-        <h2>Busqueda de Colaboradores</h2>
-        <input
-          className="form-control w-50"
-          type="text"
-          placeholder="buscar..."
-          value={palabra}
-          onChange={(e) => setPalabra(e.target.value)}
-        />
-      </div>
+      
       <h2 className="mb-4">Lista de Colaboradores</h2>
 
       <table className="table table-striped table-hover mt- shadow-lg ">
